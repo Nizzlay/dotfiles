@@ -21,3 +21,4 @@ mas install \
     904280696 \ # Things
     645468574 \ # Vitamin-R
     1147396723 \ # Whatsapp
+    1518036000 # Sequel Ace
