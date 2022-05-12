@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+brew install --cask \
+    font-fira-code \
+    font-jetbrains-mono-nerd-font \
+    font-jetbrains-mono \
+    font-open-sans \
+    font-noto-sans \
+    font-roboto \
+    font-roboto-mono \
+    font-roboto-slab \
+    font-montserrat \
+    font-lato \
+    font-source-code-pro \
+    font-source-sans-pro \
+    font-raleway \
+    font-oswald \
+    font-poppins \
+    font-merriweather \
+    font-pt-sans \
+    font-ubuntu \
+    font-cuprum \
+    font-oxygen \
+    font-redhat \
+    font-space-mono \
+    font-monoid \
+    font-milonga \
+    font-anton \
+    font-3270 \
+    font-abel \
+    font-montserrat \
+    font-playfair-display \
+    font-ia-writer-mono \
+    font-ia-writer-duo \
+    font-ia-writer-quattro \
+    font-im-writing-nerd-font \
+    font-ia-writer-duospace \
+    font-meslo-lg-nerd-font \
+    font-meslo-for-powerline \
+    font-meslo-lg-dz \
+    font-meslo-lg \
+    font-fontawesome
