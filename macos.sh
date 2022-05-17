@@ -68,6 +68,12 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 systemsetup -settimezone "Europe/Amsterdam" > /dev/null
 
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Menu bar: disable transparency
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -84,9 +90,9 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
-defaults write NSGlobalDomain InitialKeyRepeat -int 20
-defaults write NSGlobalDomain KeyRepeat -int 1
+# Set a fast keyboard repeat rate, and make it happen more quickly.
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
+defaults write NSGlobalDomain KeyRepeat -int 2
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -113,29 +119,20 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 # Finder                                                                      #
 ###############################################################################
 
-# Show icons for hard drives, servers, and removable media on the desktop
+# Don't show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-# Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
-
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# Finder: show status bar
-defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
 # Finder: allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
-
-# Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -171,7 +168,13 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 chflags nohidden ~/Library
 
 # New Finder Window shows your home folder
-defaults write com.apple.finder NewWindowTarget PfHm
+# defaults write com.apple.finder NewWindowTarget PfHm
+
+# Disable warnings for (re)moving files from iCloud
+defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
+
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -198,6 +201,9 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # Don't show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
+# move Dock to left
+defaults write com.apple.dock orientation left
 
 # Hot corners
 # Possible values:

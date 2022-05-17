@@ -6,37 +6,31 @@ set -e
 # Set variable to current path
 CURRENT_PATH=$(pwd)
 
-# xcode-select --install
-xcode-select --install
+if [[ $(uname -m) == 'arm64' ]]; then
+    echo "Setting Path to /opt/homebrew/bin:\$PATH"
+    export PATH=/opt/homebrew/bin:$PATH
+else
+    echo "Setting Path to /usr/local/bin:\$PATH"
+    export PATH=/usr/local/bin:$PATH
+fi
 
-# Check for homebrew
+# Install homebrew
 if [[ $(command -v brew) != 0 ]]; then
     echo 'Installing Homebrew...'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/nizzlay/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Add sources for brew
-brew tap \
-    homebrew/core \
-    homebrew/cask \
-    homebrew/cask-fonts \
-    homebrew/services \
-    espanso/espanso \
-    romkatv/powerlevel10k
-
-# Reload updated brew
+echo 'Installing Brew Packages...'
 brew update
-brew cask update
-brew upgrade
+brew tap homebrew/bundle
+brew bundle
 
-# Install brew packages
-sh ./brew_packages.sh
-
-# Install brew casks
-sh ./brew_casks.sh
-
-# Install brew fonts
-sh ./brew_fonts.sh
+# Set shell
+grep -Fxq '$(brew --prefix)/bin/zsh' /etc/shells || sudo bash -c "echo $(brew --prefix)/bin/zsh >> /etc/shells"
+chsh -s $(brew --prefix)/bin/zsh "$USER"
 
 # Install Mac App Store
 sh ./mas.sh
