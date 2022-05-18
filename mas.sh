@@ -11,7 +11,7 @@ mas install 1276248849
 # iA Writer
 mas install 775737590 
 # Kaleidoscope
-mas install 587512244 
+mas install 1575557335 
 # Keynote
 mas install 409183694 
 # Meeter
