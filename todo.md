@@ -5,4 +5,3 @@
 ## Install missing applications
 
 - Exactscan pro
-- NewNewsWire
