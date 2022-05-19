@@ -41,9 +41,6 @@ sh ./dock_config.sh
 # System preferences
 sh ./macos.sh
 
-# Terminal stuff
-echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-
 # dotfiles config (symlink)
 ln -sf "$CURRENT_PATH/files/.gitconfig" ~
 ln -sf "$CURRENT_PATH/files/.gitignore" ~/.gitignore_global
