@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# 1Password
-mas install 1333542190
 # Amphetamine
 mas install 937984704 
 # Boxy SVG
