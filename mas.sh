@@ -26,8 +26,6 @@ mas install 1289583905
 mas install 445189367 
 # Slack
 mas install 803453959 
-# Soulver
-mas install 413965349 
 # Telegram
 mas install 747648890 
 # The Unarchiver
