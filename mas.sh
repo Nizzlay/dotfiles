@@ -32,8 +32,6 @@ mas install 747648890
 mas install 425424353 
 # Things
 mas install 904280696 
-# Vitamin-R
-mas install 645468574 
 # Whatsapp
 mas install 1147396723 
 # Sequel Ace
